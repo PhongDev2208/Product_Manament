@@ -1,0 +1,116 @@
+doctype html
+html
+  head
+    title #{pageTitle}
+
+    // Google font
+    link(rel='stylesheet', href='https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,500;1,600;1,700;1,800;1,900&display=swap')
+    link(rel='stylesheet', href='https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap')
+    // Font Awesome
+    link(rel='stylesheet', type='text/css', href='/admin/css/font-awesome.css')
+    // Flag icon
+    link(rel='stylesheet', type='text/css', href='/admin/css/flag-icon.css')
+    // Themify icon
+    link(rel='stylesheet', type='text/css', href='/admin/css/themify-icons.css')
+    // owlcarousel css
+    link(rel='stylesheet', type='text/css', href='/admin/css/owlcarousel.css')
+    // Rating css
+    link(rel='stylesheet', type='text/css', href='/admin/css/rating.css')
+    // Dropzone css
+    link(rel='stylesheet', type='text/css', href='/admin/css/dropzone.css')
+    // ico-font
+    link(rel='stylesheet', type='text/css', href='/admin/css/icofont.css')
+    // Prism css
+    link(rel='stylesheet', type='text/css', href='/admin/css/prism.css')
+    // Chartist css
+    link(rel='stylesheet', type='text/css', href='/admin/css/chartist.css')
+    // Bootstrap css
+    link(rel='stylesheet', type='text/css', href='/admin/css/bootstrap.css')
+    // App css
+    link(rel='stylesheet', type='text/css', href='/admin/css/style.css')
+
+    // Style 28tech
+    link(rel="stylesheet", href="/admin/css/style28tech.css")
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+  body
+
+    .page-wrapper
+      // Page Header Start
+      include ../partials/header.pug
+      // Page Header End
+
+      // Page Body Start
+      .page-body-wrapper
+        // Page Sider Start
+        include ../partials/sider.pug
+        // Page Sider End
+
+        // Right sidebar Start
+        include ../partials/right-sibar.pug
+        // Right sidebar End
+
+        .page-body
+          block main
+
+        // footer start
+        include ../partials/footer.pug
+        // footer end
+      // Page Body End
+
+    // latest jquery
+    script(src='/admin/js/jquery-3.3.1.min.js')
+    // Bootstrap js
+    script(src='/admin/js/bootstrap.bundle.min.js')
+    // feather icon js
+    script(src='/admin/js/feather.min.js')
+    script(src='/admin/js/feather-icon.js')
+    // Sidebar jquery
+    script(src='/admin/js/sidebar-menu.js')
+    // dropzone js
+    script(src='/admin/js/dropzone.js')
+    script(src='/admin/js/dropzone-script.js')
+    // Touchspin Js
+    script(src='/admin/js/vendors.min.js')
+    script(src='/admin/js/touchspin.js')
+    script(src='/admin/js/input-groups.min.js')
+    // Rating Js
+    script(src='/admin/js/jquery.barrating.js')
+    script(src='/admin/js/rating-script.js')
+    // Owlcarousel js
+    script(src='/admin/js/owl.carousel.js')
+    script(src='/admin/js/product-carousel.js')
+    // ckeditor js
+    script(src='/admin/js/ckeditor.js')
+    script(src='/admin/js/ckeditor.custom.js')
+    // chartjs js
+    script(src='/admin/js/chart.min.js')
+    // copycode js
+    script(src='/admin/js/prism.min.js')
+    script(src='/admin/js/clipboard.min.js')
+    script(src='/admin/js/custom-card.js')
+    // counter js
+    script(src='/admin/js/jquery.waypoints.min.js')
+    script(src='/admin/js/jquery.counterup.min.js')
+    script(src='/admin/js/counter-custom.js')
+    // peity chart js
+    script(src='/admin/js/peity.jquery.js')
+    // Apex Chart Js
+    script(src='https://cdn.jsdelivr.net/npm/apexcharts')
+    // sparkline chart js
+    script(src='/admin/js/sparkline.js')
+    // Customizer admin
+    script(src='/admin/js/admin-customizer.js')
+    // dashboard custom js
+    script(src='/admin/js/default.js')
+    // right sidebar js
+    script(src='/admin/js/chat-menu.js')
+    // height equal js
+    script(src='/admin/js/height-equal.js')
+    // lazyload js
+    script(src='/admin/js/lazysizes.min.js')
+    // script admin
+    script(src='/admin/js/admin-script.js')
+    script(src="/admin/js/script.js")

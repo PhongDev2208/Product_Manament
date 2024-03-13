@@ -1,0 +1,77 @@
+extends ../../layouts/default.pug
+include ../../mixins/pagination.pug
+include ../../mixins/form-change-multi.pug
+
+block main
+  // Container-fluid starts
+  .container-fluid
+    .page-header
+      .row
+        .col-lg-6
+          .page-header-left
+            h3
+              | #{pageTitle}
+              small Multikart Admin panel
+        .col-lg-6
+          ol.breadcrumb.pull-right
+            li.breadcrumb-item
+              a(href='/admin/products')
+                i(data-feather='home')
+            li.breadcrumb-item.active Trash
+  // Container-fluid Ends
+
+  .card.mb-3
+    .card-header Danh sách
+    .card-body
+      +form-change-multi(`/${prefixAdmin}/products/change-multi?_method=PATCH`,optionsChange)
+      table.table.table-hover.table-sm(checkbox-multi)
+        thead
+          tr
+            th
+              input(
+                type="checkbox"
+                name="checkall"
+              )
+            th STT
+            th Hình ảnh
+            th Tiêu đề
+            th Giá
+            th Thời gian xóa
+            th Hành động
+
+        tbody
+          each item, index in products
+            tr 
+              td
+                input(
+                  type="checkbox"
+                  name="id"
+                  value=item.id
+                )
+              td #{index + 1}
+              td
+                img(
+                  src=item.thumbnail
+                  alt=item.title
+                  width="100px"
+                  height="auto"
+                )
+              td #{item.title}
+              td #{item.price}$
+              td #{item.deletedAt}
+              td
+                button(class="btn btn-warning btn-sm" button-restore data-id=item._id) Khôi phục
+                button(class="btn btn-danger btn-sm ml-1" button-delete-force data-id=item._id) Xóa vĩnh viễn
+  +pagination(pagination)
+  form(
+    form-delete-force
+    action=""
+    method="POST"
+    data-path=`/${prefixAdmin}/products/delete-force`
+  )
+  form(
+    form-restore-item
+    action=""
+    method="POST"
+    data-path=`/${prefixAdmin}/products/restore`
+  )

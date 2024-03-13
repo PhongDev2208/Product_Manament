@@ -1,0 +1,66 @@
+extends ../../layouts/default.pug
+include ../../mixins/alert.pug
+
+block main
+    // Container-fluid starts
+    .container-fluid
+        .page-header
+            .row
+                .col-lg-6
+                    .page-header-left
+                        h3
+                            | #{pageTitle}
+                            small Multikart Admin panel
+                .col-lg-6
+                    ol.breadcrumb.pull-right
+                        li.breadcrumb-item
+                            a(href='/admin/products')
+                                i(data-feather='home')
+                        li.breadcrumb-item.active Product List
+    // Container-fluid Ends
+    // Container-fluid starts
+    .container-fluid
+        .card
+            .row.product-page-main.card-body
+                .col-xl-4
+                    #sync1.product-slider.owl-carousel.owl-theme
+                        .item
+                            img.blur-up.lazyloaded(src=product.thumbnail, alt='')
+                        .item
+                            img.blur-up.lazyloaded(src=product.thumbnail, alt='')
+                        .item
+                            img.blur-up.lazyloaded(src=product.thumbnail, alt='')
+                    #sync2.owl-carousel.owl-theme
+                        .item
+                            img.blur-up.lazyloaded(src=product.thumbnail, alt='')
+                        .item
+                            img.blur-up.lazyloaded(src=product.thumbnail, alt='')
+                        .item
+                            img.blur-up.lazyloaded(src=product.thumbnail, alt='')
+                .col-xl-8
+                    .product-page-details.product-right.mb-0
+                        if (product.title)
+                            h2 #{product.title}
+                        if (product.status)
+                            div(class="mb-4")
+                                if (product.status === "active")
+                                    span(class="badge badge-success") Hoạt động
+                                else
+                                    span(class="badge badge-danger") Dừng hoạt động
+                        hr
+                        h6.product-title product details
+                        if (product.description)
+                            p #{product.description}
+                        .product-price.digits.mt-2
+                            h3
+                                if (product.price && product.discountPercentage)
+                                    | $#{product.priceNew} 
+                                    del $#{product.price}
+                                    if (product.discountPercentage)
+                                        p.d-inline-block.ms-1
+                                            span(class="badge badge-primary") #{product.discountPercentage}% giảm 
+                        if (product.stock)
+                            div(class="mb-4") Còn lại: <b>#{product.stock}</b>
+                        if (product.position)
+                            div(class="mb-4") Vị trí: <b>#{product.position}</b>
+    // Container-fluid Ends

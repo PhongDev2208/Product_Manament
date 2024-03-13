@@ -1,0 +1,96 @@
+extends ../../layouts/default.pug
+include ../../mixins/alert.pug
+
+block main
+  +alert-error(5000)
+
+  // Container-fluid starts
+  .container-fluid
+    .page-header
+      .row
+        .col-lg-6
+          .page-header-left
+            h3
+              | #{pageTitle}
+              small Multikart Admin panel
+        .col-lg-6
+          ol.breadcrumb.pull-right
+            li.breadcrumb-item
+              a(href='/admin/products')
+                i(data-feather='home')
+            li.breadcrumb-item.active Add Product
+  // Container-fluid Ends
+
+  // Container-fluid Starts
+  .container-fluid
+    form(
+        action=`/${prefixAdmin}/products/create`
+        id="form-create-product"
+        method="POST"
+        enctype="multipart/form-data"
+      )
+      .row.product-adding
+        .col-xl-6
+          .card
+            .card-header
+              h5 General
+            .card-body
+              .digital-add.needs-validation
+                .form-group
+                  label.col-form-label.pt-0(for='title')
+                    span *
+                    | Title
+                  input#title.form-control(type='text' name="title" required)
+                .form-group
+                  label.col-form-label(for='price')
+                    span *
+                    | Product Price
+                  input#price.form-control(type='number' min="0" step="0.01" value="0" name="price" required)
+                .form-group
+                  label.col-form-label(for='discount')
+                    span *
+                    | Discount Percent
+                  input#discount.form-control(type='number' min="0" value="0" name="discountPercentage" required)
+                .form-group
+                  label.col-form-label.pt-0(for='stock')
+                    span *
+                    | Stock
+                  input#stock.form-control(type='number' min="0" value="0" name="stock" required)
+                .form-group
+                  label.col-form-label.pt-0(for='position')
+                    span *
+                    | Position
+                  input#position.form-control(type='number' placeholder="Tự động tăng" min="1" name="position")
+                .form-group
+                  label.col-form-label
+                    span *
+                    | Status
+                  .m-checkbox-inline.mb-0.custom-radio-ml.d-flex.radio-animated
+                    label.d-block(for='statusActive')
+                      input#statusActive.radio_animated(type='radio' value="active" name='status' checked)
+                      | Hoạt động
+                    label.d-block(for='statusInActive')
+                      input#statusInActive.radio_animated(type='radio' value="inactive" name='status')
+                      | Dừng hoạt động
+                div(class="form-group" upload-image)
+                  label(for="thumbnail") Ảnh
+                  div(class="custom-file")
+                    input(type="file" accept="image/*" class="form-control form-control-sm" name="thumbnail"  id="thumbnail" upload-image-input)
+                  img(
+                    src=""
+                    class="image-preview"
+                    upload-image-preview
+                  )
+        .col-xl-6
+          .card
+            .card-header
+              h5 Add Description
+            .card-body
+              .digital-add.needs-validation
+                .form-group
+                  .description-sm
+                    textarea#desc(name='description' cols='10' rows='4')
+                .form-group.mb-0
+                  .product-buttons
+                    button.btn.btn-primary(type='submit') Add
+  // Container-fluid Ends

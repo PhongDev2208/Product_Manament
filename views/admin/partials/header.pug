@@ -1,0 +1,112 @@
+// Page Header Start
+.page-main-header
+  .main-header-right.row
+    .main-header-left.d-lg-none.w-auto
+      .logo-wrapper
+        a(href='index.html')
+          img.blur-up.lazyloaded.d-block.d-lg-none(src='images/multikart-logo-black.png' alt='')
+    .mobile-sidebar.w-auto
+      .media-body.text-end.switch-sm
+        label.switch
+          a(href='javascript:void(0)')
+            i#sidebar-toggle(data-feather='align-left')
+    .nav-right.col
+      ul.nav-menus
+        li
+          form.form-inline.search-form
+            .form-group
+              input.form-control-plaintext(type='search' placeholder='Search..')
+              span.d-sm-none.mobile-search
+                i(data-feather='search')
+        li
+          a.text-dark(href='#!' onclick='javascript:toggleFullScreen()')
+            i(data-feather='maximize-2')
+        li.onhover-dropdown
+          a.txt-dark(href='javascript:void(0)')
+            h6 EN
+          ul.language-dropdown.onhover-show-div.p-20
+            li
+              a(href='javascript:void(0)' data-lng='en')
+                i.flag-icon.flag-icon-is
+                | English
+            li
+              a(href='javascript:void(0)' data-lng='es')
+                i.flag-icon.flag-icon-um
+                | Spanish
+            li
+              a(href='javascript:void(0)' data-lng='pt')
+                i.flag-icon.flag-icon-uy
+                | Portuguese
+            li
+              a(href='javascript:void(0)' data-lng='fr')
+                i.flag-icon.flag-icon-nz
+                | French
+        li.onhover-dropdown
+          i(data-feather='bell')
+          span.badge.badge-pill.badge-primary.pull-right.notification-badge 3
+          span.dot
+          ul.notification-dropdown.onhover-show-div.p-0
+            li
+              | Notification 
+              span.badge.badge-pill.badge-primary.pull-right 3
+            li
+              .media
+                .media-body
+                  h6.mt-0
+                    span
+                      i.shopping-color(data-feather='shopping-bag')
+                    | Your order ready for Ship..!
+                  p.mb-0 Lorem ipsum dolor sit amet, consectetuer.
+            li
+              .media
+                .media-body
+                  h6.mt-0.txt-success
+                    span
+                      i.download-color.font-success(data-feather='download')
+                    | Download Complete
+                  p.mb-0 Lorem ipsum dolor sit amet, consectetuer.
+            li
+              .media
+                .media-body
+                  h6.mt-0.txt-danger
+                    span
+                      i.alert-color.font-danger(data-feather='alert-circle')
+                    | 250 MB trash files
+                  p.mb-0 Lorem ipsum dolor sit amet, consectetuer.
+            li.txt-dark
+              a(href='javascript:void(0)') All
+              |  notification
+        li
+          a(href='javascript:void(0)')
+            i.right_side_toggle(data-feather='message-square')
+            span.dot
+        li.onhover-dropdown
+          .media.align-items-center
+            img.align-self-center.pull-right.img-50.blur-up.lazyloaded(src='images/user3.jpg' alt='header-user')
+            .dotted-animation
+              span.animate-circle
+              span.main-circle
+          ul.profile-dropdown.onhover-show-div.p-20.profile-dropdown-hover
+            li
+              a(href='javascript:void(0)')
+                i(data-feather='user')
+                | Edit Profile
+            li
+              a(href='javascript:void(0)')
+                i(data-feather='mail')
+                | Inbox
+            li
+              a(href='javascript:void(0)')
+                i(data-feather='lock')
+                | Lock Screen
+            li
+              a(href='javascript:void(0)')
+                i(data-feather='settings')
+                | Settings
+            li
+              a(href='javascript:void(0)')
+                i(data-feather='log-out')
+                | Logout
+      .d-lg-none.mobile-toggle.pull-right
+        i(data-feather='more-horizontal')
+// Page Header Ends
